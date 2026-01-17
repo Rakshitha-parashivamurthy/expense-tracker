@@ -25,7 +25,11 @@ export default function Register() {
     setLoading(true);
     setError("");
     try {
-      await api.post("/auth/register", { name, email, password });
+      api.post("/auth/register", {
+  name: fullName,
+  email,
+  password,
+});
       alert("Registration successful! Please login.");
       navigate("/login");
     } catch (err) {
